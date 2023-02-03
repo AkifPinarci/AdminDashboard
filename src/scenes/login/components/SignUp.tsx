@@ -9,38 +9,44 @@ import {
 } from "@mui/material";
 import { Formik } from "formik";
 import * as yup from "yup";
-import Header from "../../components/Header";
-
+import Header from "../../../components/Header";
+import { useNavigate } from "react-router-dom";
+import { InitialValues } from "../../../types/LoginTypes";
 const initialValues = {
   firstName: "",
   lastName: "",
+  password: "",
+  confirmedPassword: "",
   email: "",
   contact: "",
   address1: "",
   address2: "",
 };
 
-const phoneRegExp = /^((\+[1-9]{1,4}[ -]?)|(\([0-9]{2,3}\)[ -]?)|([0-9]{2,4})[ -]?)*?[0-9]{3,4}[ -]?[0-9]{3,4}$/;
-
 const userSchema = yup.object().shape({
-  firstName: yup.string().required("required"),
-  lastName: yup.string().required("required"),
-  email: yup
+  firstName: yup
     .string()
-    .email("invalid email")
+    .min(2, "must be at least 2 characters long")
     .required("required"),
-  contact: yup
+  lastName: yup
     .string()
-    .matches(phoneRegExp, "Phone number is not valid!")
+    .min(2, "must be at least 2 characters long")
     .required("required"),
-  address1: yup.string().required("required"),
-  address2: yup.string().required("required"),
+  email: yup.string().email("must be a email").required("required"),
+  password: yup.string().required("required"),
+  confirmedPassword: yup.string().required("required"),
 });
 
-const Form = () => {
+const SignUp = () => {
+  const navigate = useNavigate();
+  const handleNavigation = () => {
+    navigate("/login");
+  };
+
   const isNonMobile = useMediaQuery("(min-width:600px)");
-  const handleFormSubmit = (values) => {
+  const handleFormSubmit = (values: InitialValues) => {
     console.log(values);
+    handleNavigation();
   };
 
   return (
@@ -115,13 +121,13 @@ const Form = () => {
                 fullWidth
                 variant="filled"
                 type="text"
-                label="Contact Number"
+                label="Password"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                value={values.contact}
-                name="contact"
-                error={!!touched.contact && !!errors.contact}
-                helperText={touched.contact && errors.contact}
+                value={values.password}
+                name="password"
+                error={!!touched.password && !!errors.password}
+                helperText={touched.password && errors.password}
                 sx={{
                   gridColumn: "span 4",
                 }}
@@ -130,28 +136,17 @@ const Form = () => {
                 fullWidth
                 variant="filled"
                 type="text"
-                label="Address 1"
+                label="Confirm Password"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                value={values.address1}
-                name="address1"
-                error={!!touched.address1 && !!errors.address1}
-                helperText={touched.address1 && errors.address1}
-                sx={{
-                  gridColumn: "span 4",
-                }}
-              />
-              <TextField
-                fullWidth
-                variant="filled"
-                type="text"
-                label="Address 1"
-                onBlur={handleBlur}
-                onChange={handleChange}
-                value={values.address2}
-                name="address2"
-                error={!!touched.address2 && !!errors.address2}
-                helperText={touched.address2 && errors.address2}
+                value={values.confirmedPassword}
+                name="confirmedPassword"
+                error={
+                  !!touched.confirmedPassword && !!errors.confirmedPassword
+                }
+                helperText={
+                  touched.confirmedPassword && errors.confirmedPassword
+                }
                 sx={{
                   gridColumn: "span 4",
                 }}
@@ -169,4 +164,4 @@ const Form = () => {
   );
 };
 
-export default Form;
+export default SignUp;

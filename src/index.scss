@@ -37,3 +37,31 @@ body,
 .icon-button-no-hover:hover {
   background-color: inherit !important;
 }
+.db-first-row-box1 {
+}
+.db-second-row-box1 {
+  grid-column: "span 8";
+  grid-row: "span 2";
+}
+.margin-20 {
+  margin: 20px;
+}
+.dashboard-wrapper {
+  .flex-space-center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .grid-maker {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-rows: 140px;
+    gap: 20px;
+  }
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

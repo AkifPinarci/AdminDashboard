@@ -21,13 +21,13 @@ const Dashboard = () => {
   const data = useLoaderData();
   console.log(data);
   return (
-    <Box m="20px">
-      <Box display="flex" justifyContent="space-between" alignItems="center">
+    <Box className="margin-20 dashboard-wrapper">
+      <Box className="flex-space-center">
         <Header title="DASHBOARD" subtitle="Welcome to your Dashboard" />
         <Box>
           <Button
             sx={{
-              backgroundColor: colors.blueAccent[700],
+              bgcolor: colors.blueAccent[700],
               color: colors.grey[100],
               fontSize: "14px",
               fontWeight: "bold",
@@ -41,16 +41,11 @@ const Dashboard = () => {
       </Box>
 
       {/* Whole Grid */}
-      <Box
-        display="grid"
-        gridTemplateColumns="repeat(12, 1fr)"
-        gridAutoRows="140px"
-        gap="20px"
-      >
+      <Box className="grid-maker">
         {/* First Row */}
         <Box
+          bgcolor={colors.primary[400]}
           gridColumn="span 3"
-          backgroundColor={colors.primary[400]}
           display="flex"
           alignItems="center"
           justifyContent="center"
@@ -58,7 +53,7 @@ const Dashboard = () => {
           <StatBox
             title="1,234"
             subtitle="Emails Sent"
-            progress="0.14"
+            progress={0.14}
             increase="+14%"
             icon={
               <EmailIcon
@@ -69,7 +64,7 @@ const Dashboard = () => {
         </Box>
         <Box
           gridColumn="span 3"
-          backgroundColor={colors.primary[400]}
+          bgcolor={colors.primary[400]}
           display="flex"
           alignItems="center"
           justifyContent="center"
@@ -77,7 +72,7 @@ const Dashboard = () => {
           <StatBox
             title="1,234"
             subtitle="Adds Runned"
-            progress="0.65"
+            progress={0.65}
             increase="+65%"
             icon={
               <PointOfSaleIcon
@@ -88,7 +83,7 @@ const Dashboard = () => {
         </Box>
         <Box
           gridColumn="span 3"
-          backgroundColor={colors.primary[400]}
+          bgcolor={colors.primary[400]}
           display="flex"
           alignItems="center"
           justifyContent="center"
@@ -96,7 +91,7 @@ const Dashboard = () => {
           <StatBox
             title="9,2734"
             subtitle="New Users"
-            progress="0.75"
+            progress={0.75}
             increase="+75%"
             icon={
               <PersonAddIcon
@@ -107,7 +102,7 @@ const Dashboard = () => {
         </Box>
         <Box
           gridColumn="span 3"
-          backgroundColor={colors.primary[400]}
+          bgcolor={colors.primary[400]}
           display="flex"
           alignItems="center"
           justifyContent="center"
@@ -115,7 +110,7 @@ const Dashboard = () => {
           <StatBox
             title="1,234,234"
             subtitle="Traffic Inbound"
-            progress="0.90"
+            progress={0.9}
             increase="+78%"
             icon={
               <TrafficIcon
@@ -125,11 +120,7 @@ const Dashboard = () => {
           ></StatBox>
         </Box>
         {/* Second Row */}
-        <Box
-          gridColumn="span 8"
-          gridRow="span 2"
-          backgroundColor={colors.primary[400]}
-        >
+        <Box gridColumn="span 8" gridRow="span 2" bgcolor={colors.primary[400]}>
           <Box
             mt="15px"
             p="0 30px"
@@ -162,7 +153,7 @@ const Dashboard = () => {
         <Box
           gridColumn="span 4"
           gridRow="span 2"
-          backgroundColor={colors.primary[400]}
+          bgcolor={colors.primary[400]}
           overflow="auto"
         >
           <Box
@@ -170,10 +161,14 @@ const Dashboard = () => {
             justifyContent="space-between"
             alignItems="center"
             borderBottom={`4px solid ${colors.primary[500]}`}
-            colors={colors.grey[100]}
+            bgcolor={colors.primary[400]}
             p="15px"
           >
-            <Typography color={colors.grey[100]} variant="h5" fontWeight="600">
+            <Typography
+              color={colors.primary[100]}
+              variant="h5"
+              fontWeight="600"
+            >
               Recent Transactions
             </Typography>
           </Box>
@@ -200,7 +195,7 @@ const Dashboard = () => {
               </Box>
               <Box color={colors.grey[100]}>{transaction.date}</Box>
               <Box
-                backgroundColor={colors.greenAccent[500]}
+                bgcolor={colors.greenAccent[500]}
                 p="5px 10px"
                 borderRadius="4px"
               >
@@ -213,7 +208,7 @@ const Dashboard = () => {
         <Box
           gridColumn="span 4"
           gridRow="span 2"
-          backgroundColor={colors.primary[400]}
+          bgcolor={colors.primary[400]}
           p="30px"
         >
           <Typography variant="h5" fontWeight="600">
@@ -236,11 +231,7 @@ const Dashboard = () => {
             <Typography>Includes extra misc expenditures and costs</Typography>
           </Box>
         </Box>
-        <Box
-          gridColumn="span 4"
-          gridRow="span 2"
-          backgroundColor={colors.primary[400]}
-        >
+        <Box gridColumn="span 4" gridRow="span 2" bgcolor={colors.primary[400]}>
           <Typography
             variant="h5"
             fontWeight="600"
@@ -255,7 +246,7 @@ const Dashboard = () => {
         <Box
           gridColumn="span 4"
           gridRow="span 2"
-          backgroundColor={colors.primary[400]}
+          bgcolor={colors.primary[400]}
           padding="30px"
         >
           <Typography

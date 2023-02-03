@@ -26,7 +26,7 @@ const Topbar = () => {
   const colorMode = useContext(ColorModeContext);
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
-  const handleClick = (event) => {
+  const handleClick = (event: any) => {
     setAnchorEl(event.currentTarget);
   };
   const handleClose = () => {
@@ -45,11 +45,7 @@ const Topbar = () => {
   };
   return (
     <Box display="flex" justifyContent="space-between" p={2}>
-      <Box
-        display="flex"
-        backgroundColor={colors.primary[400]}
-        borderRadius="3px"
-      >
+      <Box display="flex" bgcolor={colors.primary[400]} borderRadius="3px">
         <InputBase sx={{ ml: 2, flex: 1 }} placeholder="Search" />
         <IconButton type="button" sx={{ p: 1 }}>
           <SearchIcon></SearchIcon>

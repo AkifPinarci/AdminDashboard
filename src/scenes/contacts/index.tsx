@@ -12,7 +12,7 @@ const Contacts = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
-  const columns = [
+  const columns: any = [
     { field: "id", headerName: "ID", flex: 0.5 },
     { field: "registrarId", headerName: "REGISTRARID" },
     {
@@ -28,7 +28,7 @@ const Contacts = () => {
       headerAlign: "left",
       align: "left",
     },
-    ,
+
     {
       field: "phone",
       headerName: "PHONE NUMBER",

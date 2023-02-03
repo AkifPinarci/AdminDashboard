@@ -16,7 +16,7 @@ const FAQ = () => {
       <Header title="FAQ" subtitle="Frequently Asked Questions Page"></Header>
       <Accordion>
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-          <Typography color={colors.greenAccent[500]} varient="h5">
+          <Typography color={colors.greenAccent[500]} variant="h5">
             What is Lorem Ipsum?
           </Typography>
         </AccordionSummary>
@@ -36,7 +36,7 @@ const FAQ = () => {
       </Accordion>
       <Accordion>
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-          <Typography color={colors.greenAccent[500]} varient="h5">
+          <Typography color={colors.greenAccent[500]} variant="h5">
             Why do we use it?
           </Typography>
         </AccordionSummary>
@@ -57,7 +57,7 @@ const FAQ = () => {
       </Accordion>
       <Accordion>
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-          <Typography color={colors.greenAccent[500]} varient="h5">
+          <Typography color={colors.greenAccent[500]} variant="h5">
             Where does it come from?
           </Typography>
         </AccordionSummary>
@@ -85,7 +85,7 @@ const FAQ = () => {
       </Accordion>
       <Accordion>
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-          <Typography color={colors.greenAccent[500]} varient="h5">
+          <Typography color={colors.greenAccent[500]} variant="h5">
             Where can I get some?
           </Typography>
         </AccordionSummary>
@@ -105,7 +105,7 @@ const FAQ = () => {
       </Accordion>
       <Accordion>
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-          <Typography color={colors.greenAccent[500]} varient="h5">
+          <Typography color={colors.greenAccent[500]} variant="h5">
             What is Lorem Ipsum?
           </Typography>
         </AccordionSummary>

@@ -19,7 +19,15 @@ import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
 import { useState } from "react";
 
-const Item = ({ title, to, icon, selected, setSelected }) => {
+interface ItemProps {
+  title: string;
+  to: any;
+  icon: any;
+  selected: any;
+  setSelected: any;
+}
+
+const Item = ({ title, to, icon, selected, setSelected }: ItemProps) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 

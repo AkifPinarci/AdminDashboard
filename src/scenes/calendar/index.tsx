@@ -22,7 +22,7 @@ const Calendar = () => {
   const colors = tokens(theme.palette.mode);
   const [currentEvents, setCurrentEvents] = useState([]);
 
-  const handleDateClick = (selected) => {
+  const handleDateClick = (selected: any) => {
     const title = prompt("Please enter a new title for your event");
     const calendarApi = selected.view.calendar;
     calendarApi.unselect();
@@ -38,7 +38,7 @@ const Calendar = () => {
     }
   };
 
-  const handleEventClick = (selected) => {
+  const handleEventClick = (selected: any) => {
     if (
       window.confirm(
         `Are you sure you want to delete the event '${selected.event.title}'`
@@ -56,13 +56,13 @@ const Calendar = () => {
         {/* CALENDAR SIDEBAR */}
         <Box
           flex="1 1 20%"
-          backgroundColor={colors.primary[400]}
+          bgcolor={colors.primary[400]}
           p="15px"
           borderRadius="4px"
         >
           <Typography variant="h5">Events</Typography>
           <List>
-            {currentEvents.map((event) => (
+            {currentEvents.map((event: any) => (
               <ListItem
                 key={event.id}
                 sx={{
@@ -110,7 +110,7 @@ const Calendar = () => {
             dayMaxEvents={true}
             select={handleDateClick}
             eventClick={handleEventClick}
-            eventsSet={(events) => setCurrentEvents(events)}
+            eventsSet={(events: any) => setCurrentEvents(events)}
             initialEvents={[
               {
                 id: "12315",

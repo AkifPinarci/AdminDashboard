@@ -21,7 +21,7 @@ const Profile = () => {
       flexDirection="column"
     >
       <Box>
-        <Box display="flex" justifyContent="center" alingItems="center">
+        <Box className="flex-center">
           <img
             style={{ borderRadius: "50px" }}
             alt="profile-user"
@@ -39,7 +39,7 @@ const Profile = () => {
           >
             Mehmet A. Pinarci
           </Typography>
-          <Typography variant="h7" color={colors.greenAccent[500]}>
+          <Typography variant="h6" color={colors.greenAccent[500]}>
             JR. Admin
           </Typography>
         </Box>

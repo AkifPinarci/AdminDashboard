@@ -16,8 +16,9 @@ import { Formik } from "formik";
 import * as yup from "yup";
 import Header from "../../../components/Header";
 import { tokens } from "../../../theme";
+import { InitialValues } from "../../../types/LoginTypes";
 
-const initialValues = {
+const initialValues: InitialValues = {
   email: "",
   password: "",
 };
@@ -38,11 +39,11 @@ const Login = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const isNonMobile = useMediaQuery("(min-width:600px)");
-  const handleFormSubmit = (values) => {
+  const handleFormSubmit = (values: any) => {
     console.log(values);
   };
   return (
-    <Box borderStyle="3 solid red" padding="5px" width="50%">
+    <Box component="div" border="3 solid red" padding="5px" width="50%">
       <Header
         sx={{
           display: "flex",
