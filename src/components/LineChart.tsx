@@ -3,12 +3,65 @@ import React from "react";
 import { tokens } from "../theme";
 import { useTheme } from "@mui/material";
 import { mockLineData as data } from "../data/mockData";
-
+import { Box } from "@mui/material";
+import { Line } from "react-chartjs-2";
 const LineChart = ({ isDashboard = false }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+  const labels = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+  ];
+
+  const data = {
+    labels,
+    datasets: [
+      {
+        type: "line" as const,
+        label: "Total Profit",
+        borderColor: "rgb(255, 99, 132)",
+        borderWidth: 2,
+        fill: false,
+        data: {
+          January: 130,
+          February: 231,
+          March: 232,
+          April: 453,
+          May: 455,
+          June: 354,
+          July: 566,
+        },
+      },
+      {
+        type: "line" as const,
+        label: "Streamer Profit",
+        borderColor: colors.blueAccent[700],
+        borderWidth: 2,
+        fill: false,
+        data: {
+          January: 10,
+          February: 31,
+          March: 23,
+          April: 43,
+          May: 45,
+          June: 54,
+          July: 66,
+        },
+      },
+    ],
+  };
   return (
-    <h1>sa</h1>
+    <Box>
+      <Line
+        className={isDashboard ? "line-chart-dashboard" : "line-chart"}
+        data={data}
+      />
+    </Box>
     // <ResponsiveLine
     //   theme={{
     //     axis: {

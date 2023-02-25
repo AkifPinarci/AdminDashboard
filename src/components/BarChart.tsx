@@ -3,8 +3,8 @@ import { useTheme } from "@mui/material";
 import { Box } from "@mui/material";
 import { tokens } from "../theme";
 import { mockBarData as data } from "../data/mockData";
-import "chart.js/auto";
 import { Chart } from "react-chartjs-2";
+
 const BarChart = ({ isDashboard = false }) => {
   const ref = useRef();
   const theme = useTheme();
@@ -24,7 +24,7 @@ const BarChart = ({ isDashboard = false }) => {
     datasets: [
       {
         type: "line" as const,
-        label: "Dataset 1",
+        label: "Streamer Profits",
         borderColor: "rgb(255, 99, 132)",
         borderWidth: 2,
         fill: false,
@@ -40,7 +40,7 @@ const BarChart = ({ isDashboard = false }) => {
       },
       {
         type: "bar" as const,
-        label: "Dataset 2",
+        label: "Copmany Earning Index",
         backgroundColor: "rgb(75, 192, 192)",
         data: {
           January: 130,
@@ -56,7 +56,7 @@ const BarChart = ({ isDashboard = false }) => {
       },
       {
         type: "bar" as const,
-        label: "Dataset 3",
+        label: "Total Amount",
         backgroundColor: "rgb(53, 162, 235)",
         data: {
           January: 130,
@@ -72,7 +72,11 @@ const BarChart = ({ isDashboard = false }) => {
   };
   return (
     <Box>
-      <Chart className="bar-chart" type="bar" data={data} />
+      <Chart
+        className={isDashboard ? "bar-chart-dashboard" : "bar-chart"}
+        type="bar"
+        data={data}
+      />
     </Box>
   );
 };

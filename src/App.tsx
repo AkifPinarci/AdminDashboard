@@ -12,13 +12,14 @@ import Form from "./scenes/form";
 import Line from "./scenes/line";
 import Pie from "./scenes/pie";
 import FAQ from "./scenes/faq";
-import Geography from "./scenes/geography";
 import Team from "./scenes/team";
 import Calendar from "./scenes/calendar";
 import LoginPage from "./scenes/login";
 import Login from "./scenes/login/components/Login";
 import ForgetPassword from "./scenes/login/components/ForgetPassword";
 import SignUp from "./scenes/login/components/SignUp";
+import "chart.js/auto";
+
 function App() {
   const HeaderLayout = () => (
     <div className="app">
@@ -101,10 +102,6 @@ function App() {
         {
           path: "line",
           element: <Line />,
-        },
-        {
-          path: "geography",
-          element: <Geography />,
         },
       ],
     },

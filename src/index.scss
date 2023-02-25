@@ -68,4 +68,21 @@ body,
 
 .bar-chart {
   max-height: 75vh;
+  max-width: 100%;
+}
+.bar-chart-dashboard {
+  max-height: 30vh;
+  max-width: 100%;
+}
+.pie-chart {
+  max-height: 75vh;
+  max-width: 100%;
+}
+.line-chart {
+  max-height: 75vh;
+  max-width: 100%;
+}
+
+.line-chart-dashboard {
+  max-height: 30vh;
 }
