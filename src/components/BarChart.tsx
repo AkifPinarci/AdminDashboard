@@ -1,14 +1,7 @@
-import { useRef } from "react";
-import { useTheme } from "@mui/material";
 import { Box } from "@mui/material";
-import { tokens } from "../theme";
-import { mockBarData as data } from "../data/mockData";
 import { Chart } from "react-chartjs-2";
 
 const BarChart = ({ isDashboard = false }) => {
-  const ref = useRef();
-  const theme = useTheme();
-  const colors = tokens(theme.palette.mode);
   const labels = [
     "January",
     "February",

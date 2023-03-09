@@ -1,6 +1,6 @@
 import React from "react";
 import { Typography, Box, useTheme } from "@mui/material";
-import { ColorModeContext, tokens } from "../theme";
+import { tokens } from "../theme";
 import { HeaderProps } from "../types/HeaderComponentTypes";
 const Header = ({ title, subtitle, sx = {} }: HeaderProps) => {
   const theme = useTheme();

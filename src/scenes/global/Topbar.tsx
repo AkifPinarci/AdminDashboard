@@ -11,7 +11,7 @@ import {
   MenuItem,
 } from "@mui/material";
 import { InputBase } from "@mui/material";
-import { ColorModeContext, tokens } from "../../theme";
+import { tokens } from "../../theme";
 import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined";
@@ -20,10 +20,13 @@ import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import SearchIcon from "@mui/icons-material/Search";
 import { Person } from "@mui/icons-material";
 import Profile from "./components/Profile";
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
+import { toggleColorMode } from "../../features/color/colorSlice";
 const Topbar = () => {
   const theme = useTheme();
-  const colors = tokens(theme.palette.mode);
-  const colorMode = useContext(ColorModeContext);
+  const dispatch = useAppDispatch();
+  const mode = useAppSelector((state) => state.color.mode);
+  const colors = tokens(mode);
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event: any) => {
@@ -52,7 +55,11 @@ const Topbar = () => {
         </IconButton>
       </Box>
       <Box display="flex">
-        <IconButton onClick={colorMode.toggleColorMode}>
+        <IconButton
+          onClick={() => {
+            dispatch(toggleColorMode());
+          }}
+        >
           {theme.palette.mode === "dark" ? (
             <DarkModeOutlinedIcon></DarkModeOutlinedIcon>
           ) : (

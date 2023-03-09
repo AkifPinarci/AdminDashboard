@@ -1,5 +1,5 @@
 import React from "react";
-import { ColorModeContext, useMode } from "./theme";
+import { useMode } from "./theme";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import Topbar from "./scenes/global/Topbar";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
@@ -108,12 +108,10 @@ function App() {
   ]);
 
   return (
-    <ColorModeContext.Provider value={colorMode}>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <RouterProvider router={router}></RouterProvider>
-      </ThemeProvider>
-    </ColorModeContext.Provider>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <RouterProvider router={router}></RouterProvider>
+    </ThemeProvider>
   );
 }
 

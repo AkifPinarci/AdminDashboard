@@ -8,7 +8,7 @@ import {
   Menu,
   MenuItem,
 } from "@mui/material";
-import { ColorModeContext, tokens } from "../../../theme";
+import { tokens } from "../../../theme";
 const Profile = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
